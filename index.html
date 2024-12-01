@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숫자 맞추기 게임</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+  </head>
+  <body>
+    <img class="game" src="img/game.png" />
+    <video
+      src="img/6892130_Vibrant_Colorful_1280x720.mp4"
+      autoplay
+      loop
+      muted
+    ></video>
+    <div class="wrap">
+      <div class="control"><img src="img/9827445.png2.png" /></div>
+      <div class="game-container">
+        <div class="text">
+          <h3>숫자 맞추기 게임</h3>
+          <span
+            >결과화면:
+            <span id="result" class="result">up / down / bingo</span></span
+          >
+          <div id="attempts" class="attempts">남은 기회: 10</div>
+          <form>
+            <label for="user">숫자 입력:</label>
+            <input type="number" id="user" placeholder="1부터 100까지 입력" />
+            <div class="button-container">
+              <button type="submit" id="play">게임 시작</button>
+              <button type="button" id="retry">재도전</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

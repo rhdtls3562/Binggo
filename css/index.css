@@ -1,0 +1,193 @@
+/* 기본 스타일 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+}
+
+.game {
+  z-index: 999;
+  position: absolute;
+  width: 25%;
+  left: 50%;
+  top: 23%;
+  transform: translate(-50%, -50%);
+}
+
+video {
+  position: relative;
+  width: 100%; /* 화면 너비에 맞게 */
+  height: 100vh; /* 화면 높이에 맞게 */
+  object-fit: cover; /* 화면을 꽉 채우도록 비디오 비율을 조정 */
+  display: block;
+}
+
+.control {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* 클릭 이벤트를 무시 */
+}
+
+.game-container {
+  z-index: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/9827445.png);
+  background-size: cover;
+  box-sizing: border-box;
+  text-align: center;
+  width: 35vw;
+  height: 35vw;
+}
+
+h3 {
+  margin-bottom: 0.5vw;
+  font-size: 1.5vw;
+  color: #2c3e50;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.text {
+  position: absolute;
+  left: 50%;
+  top: 32%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 300px;
+  margin: auto;
+  padding-top: 8vw;
+}
+
+.result {
+  font-size: 1vw;
+  font-weight: 600;
+  color: #3498db;
+}
+
+.attempts {
+  margin: 0.5vw 0;
+  font-size: 1vw;
+  color: #7f8c8d;
+  font-weight: 900;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.5vw;
+}
+
+label {
+  font-size: 1vw;
+  margin-bottom: 0.3vw;
+  color: #34495e;
+  font-weight: 600;
+}
+
+input {
+  padding: 0.5vw;
+  width: 80%;
+  border-radius: 12px;
+  border: 2px solid #3498db;
+  box-sizing: border-box;
+  margin-bottom: 0.5vw;
+  font-size: 1vw;
+  text-align: center;
+  background-color: #ecf0f1;
+  transition: border-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2980b9; /* 포커스 시 색상 */
+  box-shadow: 0 0 5px rgba(41, 128, 185, 0.6); /* 포커스 시 그림자 */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 0.5vw 2vw;
+  border: none;
+  border-radius: 30px;
+  background-color: #3498db;
+  color: white;
+  font-size: 1vw;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px); /* 버튼 호버 시 살짝 올라가는 효과 */
+}
+
+button:active {
+  background-color: #1d6fa5;
+  transform: translateY(1px); /* 버튼 클릭 시 살짝 눌리는 효과 */
+}
+
+/* 재도전 버튼 */
+#retry {
+  background-color: #95a5a6;
+  display: none;
+}
+
+#retry:hover {
+  background-color: #7f8c8d;
+}
+
+#retry:active {
+  background-color: #616a6b;
+}
+
+@media screen and (max-width: 768px) {
+  .game {
+    width: 40vw;
+    top: 20%;
+  }
+
+  .game-container {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  h3 {
+    font-size: 4vw;
+  }
+
+  .text {
+    width: 90%;
+    padding-top: 12vw;
+  }
+
+  input {
+    font-size: 4vw;
+  }
+
+  button {
+    font-size: 4vw;
+    padding: 2vw 4vw;
+  }
+
+  .button-container {
+    gap: 10px;
+  }
+}
